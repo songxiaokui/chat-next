@@ -1,3 +1,105 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    @apply bg-gray-100
+}
+
+html, body {
+    @apply h-full
+}
+
+body {
+    @apply flex flex-col pt-4 gap-2 w-11/12 mx-auto max-w-3xl
+}
+
+body {
+    padding-bottom: max(env(safe-area-inset-bottom), 16px);
+}
+
+.grow-flex-col {
+    @apply grow flex flex-col
+}
+
+.card {
+    @apply rounded-md shadow-md bg-gray-50
+}
+
+.btn {
+    @apply rounded shadow py-1 px-3 text-white transition enabled:active:scale-95 hover:shadow-md
+}
+
+.btn {
+    @apply bg-sky-500 enabled:hover:bg-sky-600
+}
+
+.btn-icon, .btn-icon-border {
+    @apply text-gray-700 enabled:hover:text-sky-500 transition
+}
+
+.btn-icon-border {
+    @apply py-0.5 px-2.5 rounded-2xl border border-gray-300 enabled:hover:bg-sky-100 enabled:hover:border-sky-300
+}
+
+.btn-tab, .btn-menu {
+    @apply px-1.5 rounded transition ring-offset-2 ring-sky-200 hover:bg-gray-200
+}
+
+.btn-tab {
+    @apply py-1 ui-selected:bg-sky-100 ui-selected:ring-2
+}
+
+.btn-menu {
+    @apply ui-open:bg-sky-100 ui-open:ring-2
+}
+
+::-webkit-scrollbar {
+    --bar-width: 5px;
+    width: var(--bar-width);
+    height: var(--bar-width);
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    background-clip: content-box;
+    border: 1px solid transparent;
+}
+
+.code:hover .copy-action,
+.chat-msg:hover .chat-action {
+    @apply opacity-100 scale-100
+}
+
+.chat-action, .copy-action {
+    @apply opacity-0 scale-90 duration-300
+}
+
+.flex-center {
+    @apply flex justify-center items-center
+}
+
+.dialog {
+    @apply fixed inset-0 bg-black/30 flex flex-col justify-center pb-32 px-[4.166%] text-gray-600
+}
+
+.dialog-panel {
+    @apply bg-gray-50 p-5
+}
+
+.dialog-title {
+    @apply font-medium
+}
+
+.input {
+    @apply rounded-md p-2 focus:outline outline-2 outline-offset-2 outline-gray-300 bg-gray-100 text-gray-600
+}
+
+#headlessui-portal-root {
+    @apply absolute
+}
