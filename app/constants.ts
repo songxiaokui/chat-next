@@ -1,5 +1,6 @@
 export enum StoreKey {
   Chat = "chat-next-store",
+  Config = "chat-next-config"
 }
 
 export const DEFAULT_TOPIC = "新的聊天"

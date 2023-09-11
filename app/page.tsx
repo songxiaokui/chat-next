@@ -4,6 +4,16 @@ import React, { Fragment, useEffect, useState } from "react"
 import Chat from "@/app/components/chat"
 import ChatList from "@/app/components/chat-list"
 import { useChatStore } from "@/app/store/chat"
+import dynamic from "next/dynamic"
+import { Loading } from "@/app/components/svg"
+
+const Settings = dynamic(() => import("@/app/components/settings"), {
+  loading: () => (
+    <div className="flex justify-center pt-4">
+      <Loading className="w-8 h-8 animate-spin text-gray-500"/>
+    </div>
+  ),
+})
 
 export default function Page() {
   const currentTopic = useChatStore(state => state.currentSession().topic)
@@ -36,8 +46,8 @@ export default function Page() {
         <Tab.Panel className="grow-flex-col">
           <Chat/>
         </Tab.Panel>
-        <Tab.Panel className="grow-flex-col card justify-center items-center font-medium text-lg">
-          设置界面
+        <Tab.Panel className="grow-flex-col">
+          <Settings/>
         </Tab.Panel>
       </Tab.Panels>
     </Tab.Group>
